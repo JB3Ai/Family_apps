@@ -21,7 +21,6 @@ export default function PhotoAlbum() {
                 addPhoto({
                     data: reader.result,
                     uploadedBy: currentUser,
-                    id: Date.now(),
                     date: timestamp
                 });
             };
@@ -65,8 +64,8 @@ export default function PhotoAlbum() {
             }}>
                 {photos.length === 0 && <div style={{ gridColumn: 'span 2', textAlign: 'center', padding: '20px', color: 'var(--text-muted)' }}>No photos yet</div>}
 
-                {photos.map((photo, index) => (
-                    <div key={photo.id} style={{ position: 'relative', borderRadius: 'var(--radius-sm)', overflow: 'hidden', boxShadow: 'var(--shadow-sm)', aspectRatio: '1/1' }}>
+                {photos.map((photo) => (
+                    <div key={photo.firebaseId} style={{ position: 'relative', borderRadius: 'var(--radius-sm)', overflow: 'hidden', boxShadow: 'var(--shadow-sm)', aspectRatio: '1/1' }}>
                         <img
                             src={photo.data}
                             alt="Family Upload"
@@ -85,7 +84,7 @@ export default function PhotoAlbum() {
                         }}>
                             <span>{getUserName(photo.uploadedBy)}</span>
                             <button
-                                onClick={() => deletePhoto(index)}
+                                onClick={() => deletePhoto(photo.firebaseId)}
                                 style={{ background: 'none', border: 'none', color: '#faa', cursor: 'pointer', padding: '4px' }}
                             >
                                 <Trash2 size={12} />

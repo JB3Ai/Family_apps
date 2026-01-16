@@ -38,7 +38,7 @@ export default function ShoppingList() {
                 {shoppingList.length === 0 && <p style={{ color: 'var(--text-muted)', textAlign: 'center' }}>List is empty</p>}
                 {shoppingList.map(item => (
                     <div
-                        key={item.id}
+                        key={item.firebaseId}
                         style={{
                             display: 'flex',
                             alignItems: 'center',
@@ -50,7 +50,7 @@ export default function ShoppingList() {
                         }}
                     >
                         <button
-                            onClick={() => toggleShoppingItem(item.id)}
+                            onClick={() => toggleShoppingItem(item.firebaseId)}
                             className="btn-icon"
                             style={{ color: item.done ? 'var(--status-green)' : 'var(--text-muted)' }}
                         >
@@ -74,7 +74,7 @@ export default function ShoppingList() {
                         )}
 
                         <button
-                            onClick={() => deleteShoppingItem(item.id)}
+                            onClick={() => deleteShoppingItem(item.firebaseId)}
                             className="btn-icon"
                             style={{ color: 'var(--status-red)' }}
                         >
