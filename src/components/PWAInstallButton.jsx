@@ -38,7 +38,10 @@ export default function PWAInstallButton() {
             return;
         }
 
-        if (!deferredPrompt) return;
+        if (!deferredPrompt) {
+            alert("To install Family Sync:\n1. Tap your browser's menu (three dots or share icon).\n2. Tap 'Add to Home Screen' or 'Install App'.");
+            return;
+        }
 
         // Show the install prompt
         deferredPrompt.prompt();
@@ -52,8 +55,8 @@ export default function PWAInstallButton() {
         setIsInstallable(false);
     };
 
-    // On iOS, we always show it if not in standalone mode, as a guide
-    const showButton = isInstallable || (isIOS && !window.matchMedia('(display-mode: standalone)').matches);
+    // Show the button if not in standalone mode (already installed)
+    const showButton = !window.matchMedia('(display-mode: standalone)').matches;
 
     if (!showButton) return null;
 

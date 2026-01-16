@@ -76,7 +76,7 @@ export default function Dashboard() {
             <h1 style={{ margin: 0, fontSize: '24px', fontWeight: '800', background: '-webkit-linear-gradient(45deg, #4f46e5, #ec4899)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
               Family Sync
             </h1>
-            <img src="/jb3ai-logo.png" alt="Logo" style={{ height: '50px', opacity: 1 }} />
+            <img src="/jb3ai-logo.png" alt="Logo" style={{ height: '150px', marginLeft: 'auto', display: 'block', objectFit: 'contain' }} />
           </div>
           <span style={{ fontSize: '14px', color: 'var(--text-muted)' }}>
             {format(new Date(), 'EEEE, MMMM do')}
