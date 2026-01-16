@@ -188,9 +188,12 @@ body {
 /* Custom Inputs */
 input[type="text"],
 input[type="date"],
-input[type="datetime-local"] {
+input[type="datetime-local"],
+textarea {
   width: 100%;
   padding: 12px;
+  background-color: var(--card-bg);
+  color: var(--text-main);
   border: 2px solid var(--input-border);
   border-radius: var(--radius-sm);
   font-family: inherit;

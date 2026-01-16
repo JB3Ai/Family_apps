@@ -132,8 +132,8 @@ export default function Dashboard() {
 
       {isSunday && (
         <div style={{
-          background: '#fff7ed',
-          borderLeft: '4px solid #f97316',
+          background: 'var(--user-mom)20',
+          borderLeft: '4px solid var(--user-mom)',
           padding: '16px',
           borderRadius: 'var(--radius-sm)',
           marginBottom: '24px',
@@ -145,8 +145,8 @@ export default function Dashboard() {
           <div style={{ display: 'flex', gap: '12px' }}>
             <AlertCircle className="theme-mom" />
             <div>
-              <div style={{ fontWeight: '700', color: '#9a3412' }}>Sunday Reminder!</div>
-              <div style={{ color: '#c2410c', fontSize: '14px' }}>Don't forget to update the schedule and shopping list.</div>
+              <div style={{ fontWeight: '700', color: 'var(--user-mom)' }}>Sunday Reminder!</div>
+              <div style={{ color: 'var(--text-main)', fontSize: '14px' }}>Don't forget to update the schedule and shopping list.</div>
             </div>
           </div>
           <button

@@ -51,8 +51,8 @@ export default function ScheduleCard() {
                                 style={{
                                     padding: '16px',
                                     borderRadius: 'var(--radius-md)',
-                                    background: pickupUser ? pickupUser.color : '#f3f4f6',
-                                    color: pickupUser ? 'white' : 'var(--text-muted)',
+                                    background: pickupUser ? pickupUser.color : 'var(--card-bg-accent)',
+                                    color: pickupUser ? 'white' : 'var(--text-main)',
                                     cursor: 'pointer',
                                     display: 'flex',
                                     alignItems: 'center',

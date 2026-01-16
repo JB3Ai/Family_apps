@@ -35,7 +35,14 @@ export default function ContactVisit() {
             />
 
             {nextContact && (
-                <div style={{ marginTop: '12px', padding: '12px', background: '#ecfdf5', borderRadius: 'var(--radius-sm)', color: '#065f46' }}>
+                <div style={{
+                    marginTop: '12px',
+                    padding: '12px',
+                    background: 'var(--primary)20',
+                    border: '1px solid var(--primary)',
+                    borderRadius: 'var(--radius-sm)',
+                    color: 'var(--text-main)'
+                }}>
                     <strong>Scheduled:</strong> {format(parseISO(nextContact), 'EEEE, MMM d @ h:mm a')}
                 </div>
             )}
