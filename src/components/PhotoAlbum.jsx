@@ -44,7 +44,7 @@ export default function PhotoAlbum() {
                 <button
                     onClick={() => fileInputRef.current?.click()}
                     className="btn-primary"
-                    style={{ width: 'auto', padding: '8px 16px', fontSize: '14px', background: 'var(--text-main)' }}
+                    style={{ width: 'auto', padding: '8px 16px', fontSize: '14px', background: 'var(--primary)' }}
                 >
                     <Upload size={16} /> Add Photo
                 </button>

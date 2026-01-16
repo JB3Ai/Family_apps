@@ -44,8 +44,8 @@ export default function ShoppingList() {
                             alignItems: 'center',
                             gap: '12px',
                             padding: '12px',
-                            background: item.done ? '#f9fafb' : 'white',
-                            border: '1px solid #f3f4f6',
+                            background: item.done ? 'var(--card-bg-accent)' : 'var(--card-bg)',
+                            border: '1px solid var(--input-border)',
                             borderRadius: 'var(--radius-sm)',
                             opacity: item.done ? 0.6 : 1
                         }}
