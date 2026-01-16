@@ -32,23 +32,24 @@ export function FamilyProvider({ children }) {
     // 1. Firebase Listeners (Real-time Sync)
     useEffect(() => {
         const refs = [
-            { path: 'schedule', setter: setSchedule, isArray: false },
-            { path: 'shoppingList', setter: (val) => setShoppingList(val ? Object.values(val) : []), isArray: true },
-            { path: 'moods', setter: setMoods, isArray: false },
-            { path: 'nextContact', setter: setNextContact, isArray: false },
-            { path: 'notes', setter: setNotes, isArray: false },
-            { path: 'photos', setter: (val) => setPhotos(val ? Object.values(val) : []), isArray: true },
+            { path: 'schedule', setter: setSchedule, type: 'object' },
+            { path: 'shoppingList', setter: setShoppingList, type: 'array' },
+            { path: 'moods', setter: setMoods, type: 'object' },
+            { path: 'nextContact', setter: setNextContact, type: 'string' },
+            { path: 'notes', setter: setNotes, type: 'string' },
+            { path: 'photos', setter: setPhotos, type: 'array' },
         ];
 
-        const unsubscribes = refs.map(({ path, setter, isArray }) => {
+        const unsubscribes = refs.map(({ path, setter, type }) => {
             const dbRef = ref(db, path);
             return onValue(dbRef, (snapshot) => {
                 const data = snapshot.val();
-                if (path === 'shoppingList' || path === 'photos') {
-                    // Firebase returns objects even if we push items, so we convert back to array
+                if (type === 'array') {
                     setter(data ? Object.entries(data).map(([key, value]) => ({ ...value, firebaseId: key })) : []);
+                } else if (type === 'string') {
+                    setter(data || '');
                 } else {
-                    setter(data || (isArray ? [] : {}));
+                    setter(data || {});
                 }
             });
         });
