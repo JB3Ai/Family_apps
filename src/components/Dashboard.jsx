@@ -5,7 +5,8 @@ import MoodBoard from './MoodBoard';
 import ContactVisit from './ContactVisit';
 import NotesSection from './NotesSection';
 import PhotoAlbum from './PhotoAlbum';
-import { LogOut, AlertCircle, Calendar as CalIcon, Mail } from 'lucide-react';
+import { LogOut, AlertCircle, Calendar as CalIcon, Mail, Download } from 'lucide-react';
+import PWAInstallButton from './PWAInstallButton';
 import { format, startOfWeek, addDays } from 'date-fns';
 
 export default function Dashboard() {
@@ -196,6 +197,7 @@ export default function Dashboard() {
           ></iframe>
         </div>
       </div>
+      <PWAInstallButton />
     </div >
   );
 }
