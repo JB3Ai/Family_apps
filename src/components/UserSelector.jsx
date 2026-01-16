@@ -25,7 +25,7 @@ export default function UserSelector() {
                             padding: '24px',
                             border: `2px solid ${user.color}`,
                             borderRadius: 'var(--radius-lg)',
-                            background: 'white',
+                            background: 'var(--card-bg)',
                             fontSize: '24px',
                             fontWeight: '600',
                             display: 'flex',

@@ -78,7 +78,7 @@ export default function PhotoAlbum() {
                             padding: '4px 8px',
                             background: 'rgba(0,0,0,0.6)',
                             color: 'white',
-                            fontSize: '10px',
+                            fontSize: '12px',
                             display: 'flex',
                             justifyContent: 'space-between',
                             alignItems: 'center'

@@ -47,7 +47,6 @@ export default function ShoppingList() {
                             background: item.done ? 'var(--card-bg-accent)' : 'var(--card-bg)',
                             border: '1px solid var(--input-border)',
                             borderRadius: 'var(--radius-sm)',
-                            opacity: item.done ? 0.6 : 1
                         }}
                     >
                         <button
